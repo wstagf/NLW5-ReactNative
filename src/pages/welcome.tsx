@@ -12,7 +12,7 @@ export function Welcome() {
             <Image source={wateringImg} style={style.image}></Image>
             <Text style={style.subtitle}>Não esqueça mais de regar suas plantas. Nós cuidamos de lembrar você
 sempre que precisar.</Text>
-            <Button></Button>
+            <Button title=">"></Button>
         </SafeAreaView>
     )
 }
