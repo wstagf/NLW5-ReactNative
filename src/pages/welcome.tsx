@@ -25,8 +25,9 @@ export function Welcome() {
             }            
             <Text style={style.subtitle}>Não esqueça mais de regar suas plantas. Nós cuidamos de lembrar você
 sempre que precisar.</Text>
-            <Button title="Mostrar Imagem" onPress={handleVisibitityTrue}></Button>
-            <Button title="Ocultar Imagem" onPress={handleVisibitityFalse}></Button>
+            {/* <Button title="Mostrar Imagem" onPress={handleVisibitityTrue}></Button>
+            <Button title="Ocultar Imagem" onPress={handleVisibitityFalse}></Button> */}
+            <Button title=">"></Button>
         </SafeAreaView>
     )
 }

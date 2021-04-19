@@ -28,7 +28,8 @@ const style = StyleSheet.create(
           borderRadius: 16,
           marginBottom: 10,
           padding: 10,
-          height: 56
+          height: 56,
+          minWidth: 56          
       },
       
       buttonText: {
