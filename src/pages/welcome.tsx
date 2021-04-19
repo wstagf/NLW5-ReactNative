@@ -1,11 +1,11 @@
 import React from 'react';
-import { Text, View, StyleSheet, Image, TouchableOpacity} from "react-native";
+import { Text, SafeAreaView, StyleSheet, Image, TouchableOpacity} from "react-native";
 
 import wateringImg from '../assets/watering.png'
 
 export function Welcome() {
     return(
-        <View style={style.container}>
+        <SafeAreaView style={style.container}>
             <Text style={style.heading}>Gerencie suas plantas de forma fácil</Text>
             <Image source={wateringImg}></Image>
             <Text style={style.subHeading}>Não esqueça mais de regar suas plantas. Nós cuidamos de lembrar você
@@ -15,16 +15,17 @@ sempre que precisar.</Text>
                     Botao
                 </Text>
             </TouchableOpacity>
-        </View>
+        </SafeAreaView>
     )
 }
 
 const style = StyleSheet.create(
     {
       container: {
-        flex: 1, justifyContent: 'center', alignItems: 'center', 
+        flex: 1,
+        justifyContent: 'space-between',
+        alignItems: 'center', 
         padding: 50
-        
       },
       heading: {
           fontWeight: '600',
