@@ -7,7 +7,7 @@ import colors from '../styles/colors';
 
 export function Welcome() {
 
-    const [visible, setVisible] = useState(false);
+    const [visible, setVisible] = useState(true);
 
     function handleVisibitityTrue() {
         setVisible(true);
