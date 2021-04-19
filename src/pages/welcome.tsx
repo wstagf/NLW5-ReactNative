@@ -7,13 +7,13 @@ import colors from '../styles/colors';
 export function Welcome() {
     return(
         <SafeAreaView style={style.container}>
-            <Text style={style.title}>Gerencie suas plantas de forma fácil</Text>
+            <Text style={style.title}>Gerencie {'\n'} suas plantas  {'\n'}  de forma fácil</Text>
             <Image source={wateringImg} style={style.image}></Image>
             <Text style={style.subtitle}>Não esqueça mais de regar suas plantas. Nós cuidamos de lembrar você
 sempre que precisar.</Text>
             <TouchableOpacity style={style.button}>
-                <Text>
-                    Botao
+                <Text style={style.buttonText}>
+                    {'>'}
                 </Text>
             </TouchableOpacity>
         </SafeAreaView>
@@ -28,12 +28,12 @@ const style = StyleSheet.create(
         alignItems: 'center', 
       },
       title: {
-          fontSize: 32,
+          fontSize: 28,
           fontWeight: 'bold',
           textAlign: 'center',
           color: colors.heading,
-          lineHeight: 38,
-          marginTop: 38
+          lineHeight: 32,
+          marginTop: 30
       },
       subtitle: {
         textAlign: 'center',
@@ -55,6 +55,10 @@ const style = StyleSheet.create(
       image: {
         width: 292,
         height: 284
+      },
+      buttonText: {
+          color: colors.white,
+          fontSize: 24
       }
     }
   )
