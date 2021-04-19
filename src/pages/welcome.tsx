@@ -2,15 +2,16 @@ import React from 'react';
 import { Text, SafeAreaView, StyleSheet, Image, TouchableOpacity} from "react-native";
 
 import wateringImg from '../assets/watering.png'
+import colors from '../styles/colors';
 
 export function Welcome() {
     return(
         <SafeAreaView style={style.container}>
-            <Text style={style.heading}>Gerencie suas plantas de forma fácil</Text>
-            <Image source={wateringImg}></Image>
-            <Text style={style.subHeading}>Não esqueça mais de regar suas plantas. Nós cuidamos de lembrar você
+            <Text style={style.title}>Gerencie suas plantas de forma fácil</Text>
+            <Image source={wateringImg} style={style.image}></Image>
+            <Text style={style.subtitle}>Não esqueça mais de regar suas plantas. Nós cuidamos de lembrar você
 sempre que precisar.</Text>
-            <TouchableOpacity>
+            <TouchableOpacity style={style.button}>
                 <Text>
                     Botao
                 </Text>
@@ -25,19 +26,35 @@ const style = StyleSheet.create(
         flex: 1,
         justifyContent: 'space-between',
         alignItems: 'center', 
-        padding: 50
       },
-      heading: {
-          fontWeight: '600',
+      title: {
           fontSize: 32,
+          fontWeight: 'bold',
+          textAlign: 'center',
+          color: colors.heading,
           lineHeight: 38,
-          textAlign: 'center'
+          marginTop: 38
       },
-      subHeading: {
-        fontWeight: '400',
-        fontSize: 17,
+      subtitle: {
+        textAlign: 'center',
+        fontSize: 18,
         lineHeight: 25,
-        textAlign: 'center'
+        paddingHorizontal: 20,
+        fontWeight: '400',
+        color: colors.heading        
+      },
+      button: {
+          backgroundColor: colors.green,
+          justifyContent: 'center',
+          alignItems: 'center',
+          borderRadius: 16,
+          marginBottom: 10,
+          width: 56,
+          height: 56
+      },
+      image: {
+        width: 292,
+        height: 284
       }
     }
   )
