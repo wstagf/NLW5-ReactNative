@@ -20,7 +20,6 @@ export function Buton() {
 const styles = StyleSheet.create({
     container: {
         backgroundColor: colors.green,
-        width: '100%',
         height: 56,
         borderRadius: 16,
         justifyContent: 'center',

@@ -6,8 +6,10 @@ import {
     Image,
     TouchableOpacity,
     Dimensions,
+    KeyboardAvoidingView,
     View,
     TextInput,
+    Platform,
 } from 'react-native'
 
 import colors from '../styles/colors'
@@ -18,16 +20,25 @@ import { Buton } from '../components/button'
 export function UserIdentification() {
     return (
         <SafeAreaView style={style.container}>
-            <View style={style.content}>
-                <View style={style.form}>
-                    <Text style={style.emoji}>😀</Text>
-                    <Text style={style.title}>
-                        Como podemos {'\n'} chamar você?
-                    </Text>
-                    <TextInput style={style.input} />
-                    <Buton></Buton>
+            <KeyboardAvoidingView
+                style={style.content}
+                behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
+                <View style={style.content}>
+                    <View style={style.form}>
+                        <Text style={style.emoji}>😀</Text>
+                        <Text style={style.title}>
+                            Como podemos {'\n'} chamar você?
+                        </Text>
+                        <TextInput
+                            style={style.input}
+                            placeholder="Digite um nome"
+                        />
+                        <View style={style.footer}>
+                            <Buton></Buton>
+                        </View>
+                    </View>
                 </View>
-            </View>
+            </KeyboardAvoidingView>
         </SafeAreaView>
     )
 }
@@ -66,5 +77,10 @@ const style = StyleSheet.create({
         lineHeight: 32,
         marginTop: 20,
         fontFamily: fonts.heading,
+    },
+    footer: {
+        marginTop: 40,
+        width: '100%',
+        paddingHorizontal: 20,
     },
 })
