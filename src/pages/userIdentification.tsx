@@ -13,6 +13,7 @@ import {
 import colors from '../styles/colors'
 import fonts from '../styles/fonts'
 import { Entypo } from '@expo/vector-icons'
+import { Buton } from '../components/button'
 
 export function UserIdentification() {
     return (
@@ -24,6 +25,7 @@ export function UserIdentification() {
                         Como podemos {'\n'} chamar você?
                     </Text>
                     <TextInput style={style.input} />
+                    <Buton></Buton>
                 </View>
             </View>
         </SafeAreaView>
