@@ -10,6 +10,7 @@ import {
 
 import wateringImg from '../assets/watering.png'
 import colors from '../styles/colors'
+import { Entypo } from '@expo/vector-icons'
 
 export function Welcome() {
     return (
@@ -29,7 +30,7 @@ export function Welcome() {
             </Text>
 
             <TouchableOpacity style={style.button}>
-                <Text style={style.buttonText}>{'>'}</Text>
+                <Entypo name="chevron-right" style={style.buttonIcon}></Entypo>
             </TouchableOpacity>
         </SafeAreaView>
     )
@@ -71,7 +72,7 @@ const style = StyleSheet.create({
         minWidth: 56,
     },
 
-    buttonText: {
+    buttonIcon: {
         color: colors.white,
         fontSize: 24,
     },
