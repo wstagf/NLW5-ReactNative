@@ -6,6 +6,7 @@ import {
     Image,
     TouchableOpacity,
     Dimensions,
+    View,
 } from 'react-native'
 
 import wateringImg from '../assets/watering.png'
@@ -16,23 +17,27 @@ import { Entypo } from '@expo/vector-icons'
 export function Welcome() {
     return (
         <SafeAreaView style={style.container}>
-            <Text style={style.title}>
-                Gerencie {'\n'} suas plantas {'\n'} de forma fácil
-            </Text>
+            <View style={style.wrapper}>
+                <Text style={style.title}>
+                    Gerencie {'\n'} suas plantas {'\n'} de forma fácil
+                </Text>
 
-            <Image
-                resizeMode="contain"
-                source={wateringImg}
-                style={style.image}></Image>
+                <Image
+                    resizeMode="contain"
+                    source={wateringImg}
+                    style={style.image}></Image>
 
-            <Text style={style.subtitle}>
-                Não esqueça mais de regar suas plantas. Nós cuidamos de lembrar
-                você sempre que precisar.
-            </Text>
+                <Text style={style.subtitle}>
+                    Não esqueça mais de regar suas plantas. Nós cuidamos de
+                    lembrar você sempre que precisar.
+                </Text>
 
-            <TouchableOpacity style={style.button}>
-                <Entypo name="chevron-right" style={style.buttonIcon}></Entypo>
-            </TouchableOpacity>
+                <TouchableOpacity style={style.button}>
+                    <Entypo
+                        name="chevron-right"
+                        style={style.buttonIcon}></Entypo>
+                </TouchableOpacity>
+            </View>
         </SafeAreaView>
     )
 }
@@ -40,8 +45,12 @@ export function Welcome() {
 const style = StyleSheet.create({
     container: {
         flex: 1,
+    },
+    wrapper: {
+        flex: 1,
         alignItems: 'center',
         justifyContent: 'space-around',
+        paddingHorizontal: 20,
     },
     title: {
         fontSize: 28,
