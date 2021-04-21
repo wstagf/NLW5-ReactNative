@@ -18,6 +18,26 @@ import { Entypo } from '@expo/vector-icons'
 import { Buton } from '../components/button'
 
 export function UserIdentification() {
+    const [isFocused, setIsFocused] = useState(false)
+
+    const [isFilled, setIsFilled] = useState(false)
+
+    const [name, setName] = useState<string>()
+
+    function handleInputBlur() {
+        setIsFocused(false)
+        setIsFilled(!!name)
+    }
+
+    function handleInputFocus() {
+        setIsFocused(true)
+    }
+
+    function handleInputChanges(value: string) {
+        setIsFilled(!!value)
+        setName(value)
+    }
+
     return (
         <SafeAreaView style={style.container}>
             <KeyboardAvoidingView
@@ -25,13 +45,21 @@ export function UserIdentification() {
                 behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
                 <View style={style.content}>
                     <View style={style.form}>
-                        <Text style={style.emoji}>😀</Text>
+                        <Text style={style.emoji}>
+                            {isFilled ? '😄' : '😀'}
+                        </Text>
                         <Text style={style.title}>
                             Como podemos {'\n'} chamar você?
                         </Text>
                         <TextInput
-                            style={style.input}
+                            style={[
+                                style.input,
+                                (isFocused || isFilled) && style.isFocused,
+                            ]}
                             placeholder="Digite um nome"
+                            onBlur={handleInputBlur}
+                            onFocus={handleInputFocus}
+                            onChangeText={handleInputChanges}
                         />
                         <View style={style.footer}>
                             <Buton></Buton>
@@ -62,7 +90,7 @@ const style = StyleSheet.create({
     },
     input: {
         borderBottomWidth: 1,
-        borderColor: colors.green,
+        borderColor: colors.gray,
         color: colors.heading,
         width: '100%',
         fontSize: 18,
@@ -82,5 +110,8 @@ const style = StyleSheet.create({
         marginTop: 40,
         width: '100%',
         paddingHorizontal: 20,
+    },
+    isFocused: {
+        borderColor: colors.green,
     },
 })
