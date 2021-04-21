@@ -6,6 +6,7 @@ import {
     Jost_400Regular,
     Jost_600SemiBold,
 } from '@expo-google-fonts/jost'
+import AppLoading from 'expo-app-loading'
 
 export default function App() {
     const [fontsLoaded] = useFonts({
@@ -14,16 +15,7 @@ export default function App() {
     })
 
     if (!fontsLoaded) {
-        return (
-            <View
-                style={{
-                    flex: 1,
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                }}>
-                <Text>Carregando Fontes...</Text>
-            </View>
-        )
+        return <AppLoading />
     } else {
         return <Welcome></Welcome>
     }
