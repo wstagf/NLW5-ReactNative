@@ -8,6 +8,7 @@ import {
 } from '@expo-google-fonts/jost'
 import AppLoading from 'expo-app-loading'
 import { UserIdentification } from './src/pages/userIdentification'
+import Confirmation from './src/pages/confirmation'
 
 export default function App() {
     const [fontsLoaded] = useFonts({
@@ -18,6 +19,6 @@ export default function App() {
     if (!fontsLoaded) {
         return <AppLoading />
     } else {
-        return <UserIdentification></UserIdentification>
+        return <Confirmation />
     }
 }
