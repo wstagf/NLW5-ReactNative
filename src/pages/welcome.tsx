@@ -10,6 +10,7 @@ import {
 
 import wateringImg from '../assets/watering.png'
 import colors from '../styles/colors'
+import fonts from '../styles/fonts'
 import { Entypo } from '@expo/vector-icons'
 
 export function Welcome() {
@@ -47,7 +48,8 @@ const style = StyleSheet.create({
         fontWeight: 'bold',
         textAlign: 'center',
         color: colors.heading,
-        lineHeight: 32,
+        lineHeight: 38,
+        fontFamily: fonts.heading,
     },
     subtitle: {
         textAlign: 'center',
@@ -56,6 +58,7 @@ const style = StyleSheet.create({
         paddingHorizontal: 20,
         fontWeight: '400',
         color: colors.heading,
+        fontFamily: fonts.text,
     },
     image: {
         height: Dimensions.get('window').width * 0.7,
