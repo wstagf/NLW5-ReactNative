@@ -5,7 +5,7 @@ import {
     StyleSheet,
     Image,
     TouchableOpacity,
-    View,
+    Dimensions,
 } from 'react-native'
 
 import wateringImg from '../assets/watering.png'
@@ -18,7 +18,10 @@ export function Welcome() {
                 Gerencie {'\n'} suas plantas {'\n'} de forma fácil
             </Text>
 
-            <Image source={wateringImg} style={style.image}></Image>
+            <Image
+                resizeMode="contain"
+                source={wateringImg}
+                style={style.image}></Image>
 
             <Text style={style.subtitle}>
                 Não esqueça mais de regar suas plantas. Nós cuidamos de lembrar
@@ -54,8 +57,7 @@ const style = StyleSheet.create({
         color: colors.heading,
     },
     image: {
-        width: 150,
-        height: 120,
+        height: Dimensions.get('window').width * 0.7,
     },
 
     button: {
