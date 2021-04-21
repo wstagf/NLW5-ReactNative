@@ -14,7 +14,6 @@ import {
 
 import colors from '../styles/colors'
 import fonts from '../styles/fonts'
-import { Entypo } from '@expo/vector-icons'
 import { Buton } from '../components/button'
 
 export function UserIdentification() {
